@@ -1,5 +1,6 @@
-<?php
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<?php
 class View {
     public static function start($title){
         $html = "<!DOCTYPE html>
@@ -34,7 +35,13 @@ class View {
 
     </div>
     <ul class="nav navbar-nav">
-        <li class="active letter-space"><a href="profile.php"  >Pacientes</a></li>
+        <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Pacientes <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+          <li class="letter-space"><a href="profile.php">Ver mis pacientes <i class="fa fa-eye"></i> </a></li>
+          <li class="letter-space"><a href="add.php">Añadir Pacientes  <i class="fa fa-plus"></i> </a></li>
+          <li class="letter-space"><a href="#">Buscar Pacientes <i class="fa fa-search"></i></a></li>
+        </ul>
+        </li>
       <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Mi Perfil <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li class="letter-space"><a href="#">Información general</a></li>
@@ -46,7 +53,7 @@ class View {
     </ul>
     <div>
       <ul class="nav navbar-nav navbar-right">
-          <li class="letter-space"><a href="login.php"><span class="glyphicon glyphicon-log-out"></span> Logout
+          <li class="letter-space"><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout
               </a></li>
       </ul>
       </div>
@@ -108,7 +115,7 @@ class DB {
 
     public static function get(){  // Inicia la conexión con la base de datos
         if(self::$connection === null){
-            self::$connection = $db = new PDO("mysql:host=localhost; dbname=gestmed", "root", "");
+            self::$connection = $db = new PDO("mysql:host=localhost; dbname=gestmedf", "root", "");
             self::$connection -> exec('PRAGMA foreign_keys = ON;');
             self::$connection -> exec('PRAGMA encoding="UTF-8";');
             self::$connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

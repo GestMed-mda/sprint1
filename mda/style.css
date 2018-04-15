@@ -94,10 +94,6 @@ i.fa.fa-cloud {
 .footer-copyright, .flex-center {
     color:white;
 }
-.fa-facebook, .fa-twitter, .fa-instagram, .fa-cloud, .fa-google-plus, .fa-linkedin, .fa-pinterest {
-    color: white;
-}
-
 
 .logo-footer{
     width: 155px;
@@ -185,6 +181,42 @@ p.card-text {
 }
 
 .card {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.9);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    border-radius: 10px;
+    height: 550px;
+}
+
+#wrapper {
+    width: 40%;
+    height: 40%;
+    margin: 2% 30% 10% 30%;
+    padding: 50px;
+    background: whitesmoke;
+    border: 1px green solid; }
+
+.textInput {
+    height: 28px;
+    margin: 2px;
+    border: 1px solid black;
+    font-size: 1.2em;
+    padding: 5px;
+    width: 95%; }
+
+.btno {
+    width: 98.6%;
+    border: none;
+    margin-top: 5px;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    padding: 12px; }
+
+
+.cardind {
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.9);
     max-width: 300px;
     margin: auto;

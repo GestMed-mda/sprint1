@@ -1,8 +1,8 @@
 <?php
 include_once 'lib.php';
-/*$var = mysqli_query($link,'SELECT Servicio from medico WHERE Nombre="manuel"');
-$row = mysqli_fetch_row($var);
-echo $row[0];*/
+if (!User::getLoggedUser()){
+    header("location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +69,7 @@ echo $row[0];*/
  <br>
 <div class="container">
     <div class="grid-container">
-        <div class="card grid-item">
+        <div class="cardind grid-item">
         <i class="fa fa-cloud"></i>
         <div class="card-body">
             <h4 class="card-title letter-space">HISTORIAS CLINICAS</h4>
@@ -78,7 +78,7 @@ echo $row[0];*/
         </div>
     </div>
 
-    <div class="card">
+    <div class="cardind">
         <i class="fa fa-mouse-pointer" style="padding-top: 6px"></i>
         <div class="card-body">
             <h4 class="card-title letter-space">TUS CITAS A UN CLICK</h4>
@@ -88,7 +88,7 @@ echo $row[0];*/
 
     </div>
 
-    <div class="card">
+    <div class="cardind">
         <i class="fa fa-rss"></i>
         <div class="card-body">
             <h4 class="card-title letter-space"> ULTIMAS NOTICIAS</h4>
@@ -98,11 +98,6 @@ echo $row[0];*/
     </div>
     </div>
 </div>
-
+}
 <?php View::footer(); ?>
-
-
-</body>
-</html>
-
 
