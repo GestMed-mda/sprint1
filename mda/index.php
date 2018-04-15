@@ -82,7 +82,7 @@ if (!User::getLoggedUser()){
         <i class="fa fa-mouse-pointer" style="padding-top: 6px"></i>
         <div class="card-body">
             <h4 class="card-title letter-space">TUS CITAS A UN CLICK</h4>
-            <p class="card-text texto-width-card">Gestiona tu agenda y citas cómodamente desde cualquier punto y dispositivo. Envía recordatorios de citas a tus pacientes por SMS.</p>
+            <p class="card-text texto-width-card">Con solo un click tendras al alcance de tu mano, el horario completo con respecto a tus citas del día.</p>
             <a href="#" class="btn btn-primary">Ver Citas</a>
         </div>
 

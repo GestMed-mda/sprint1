@@ -25,9 +25,9 @@ if (!User::getLoggedUser()){
 <?php View::navbar() ?>
 
 <?php
-$num = 10;
+$num = 34;
 $res = DB::execute_sql("SELECT * FROM paciente WHERE DNI = ?",array($num));
-$result = $res->fetch(PDO::FETCH_ASSOC);
+$result = $res->fetch(PDO::FETCH_NAMED);
 $foto = $result["Foto"];
 $picture_src = "data:image/jpeg;base64," . base64_encode($foto);
 ?>
@@ -35,8 +35,8 @@ $picture_src = "data:image/jpeg;base64," . base64_encode($foto);
 <div class="limite" style="width: 100%">
     <div  style="width: 30%">
         <div class="card" style="margin: 8px 5px 25px 30px    ">
-            <?php echo"<img  style='margin-top: 10px' src='$picture_src' height='250px'>"; ?>
-            <h1><?php echo $result["Nombre"]; ?></h1>
+            <?php  echo "<img  style='margin-top: 10px; height: 250px; max-width: 200px  ' src='$picture_src'>"; ?>
+            <h2><?php echo $result["Nombre"]; ?></h2>
             <p class="title">Ciudad: <?php echo $result["Ciudad"]; ?></p>
             <p class="title">Edad: <?php echo $result["Edad"]; ?></p>
             <p class="title">Telf: <?php echo $result["Telefono"]; ?></p>
