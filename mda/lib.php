@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
 <?php
 class View {
     public static function start($title){
@@ -37,9 +38,9 @@ class View {
     <ul class="nav navbar-nav">
         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Pacientes <span class="caret"></span></a>
          <ul class="dropdown-menu">
-          <li class="letter-space"><a href="profile.php">Ver mis pacientes <i class="fa fa-eye"></i> </a></li>
+          <!--<li class="letter-space"><a href="profile.php">Ver mis pacientes <i class="fa fa-eye"></i> </a></li>-->
           <li class="letter-space"><a href="add.php">Añadir Pacientes  <i class="fa fa-plus"></i> </a></li>
-          <li class="letter-space"><a href="#">Buscar Pacientes <i class="fa fa-search"></i></a></li>
+          <li class="letter-space"><a href="search.php">Buscar Pacientes <i class="fa fa-search"></i></a></li>
         </ul>
         </li>
       <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Mi Perfil <span class="caret"></span></a>
@@ -53,6 +54,10 @@ class View {
     </ul>
     <div>
       <ul class="nav navbar-nav navbar-right">
+            <li><div class="busqueda"><form action = "search.php" name="searchForm" method="get">
+                <input type ="text"  class="search_box" name=" inputValue" placeholder="Busque Paciente " id ="search_box">
+                <button type ="submit" class="search_button" style="width: 50px; height: 40px; border-radius: 10px; " name="search" value="Buscar" id ="search_button"><i class="fa fa-search"></i></button>
+            </form></div> </li>
           <li class="letter-space"><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout
               </a></li>
       </ul>
@@ -61,6 +66,19 @@ class View {
 </nav> ';
 
     }
+
+    public static function showSearch(){
+
+        $html="
+
+            <form action = \"search.php\" name=\"searchForm\" method=\"get\">
+                <input type =\"text\"  class=\"search_box\" name=\" inputValue\" placeholder=\"Busque Paciente \" id =\"search_box\">
+                <input type =\"submit\" class=\"search_button\" name=\"search\" value=\"Buscar\" id =\"search_button\">
+            </form>
+        ";
+        echo $html;
+    }
+
 
     public static function footer(){
 
@@ -115,7 +133,7 @@ class DB {
 
     public static function get(){  // Inicia la conexión con la base de datos
         if(self::$connection === null){
-            self::$connection = $db = new PDO("mysql:host=localhost; dbname=gestmedf", "root", "");
+            self::$connection = $db = new PDO("mysql:host=localhost; dbname=gestmed", "root", "");
             self::$connection -> exec('PRAGMA foreign_keys = ON;');
             self::$connection -> exec('PRAGMA encoding="UTF-8";');
             self::$connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -172,5 +190,49 @@ class User {
     public static function logout(){  // Cierra sesión
         self::session_start();
         unset($_SESSION['user']);
+    }
+    public static function search(){
+        $db=DB::get();
+        if(isset($_GET['inputValue'])){
+            $resultadoBusqueda=$db->prepare("SELECT * FROM paciente where Nombre  LIKE ? or DNI  LIKE ? ");
+            $resultadoBusqueda-> execute(array($_GET['inputValue'].'%',$_GET['inputValue'].'%' ));
+
+            if($resultadoBusqueda){
+                echo'<h2 id="searchResults" style="text-align: center">Resultados de la búsqueda</h2>';
+                $resultadoBusqueda->setFetchMode(PDO::FETCH_NAMED);
+                echo"<p><table class='tabla' id=\"pacientes\">
+                        
+                            <th class='colum'>Nombre</th>
+                            <th class='colum'>DNI</th>
+                            <th class='colum'>Telefono</th>
+                            <th class='colum'>Edad</th>
+                            <th class='colum'>Ciudad</th>
+                            
+                            <th class='colum'>Mimedico</th>
+                        ";
+                foreach($resultadoBusqueda as $regis){
+                    echo "<tr>";
+                    echo"<td class='colum'>{$regis['Nombre']}</td>";
+                    echo"<td class='colum'>{$regis['DNI']}</td>";
+                    $DNI = $regis['DNI'];
+                    echo"<td class='colum'>{$regis['Telefono']}</td>";
+                    echo"<td class='colum'>{$regis['Edad']}</td>";
+                    echo"<td class='colum'>{$regis['Ciudad']}</td>";
+                    //echo"<td>{$regis['Foto']}</td>";
+                    echo"<td class='colum'>{$regis['Mimedico']}</td>";
+                    echo "<td><a class='enlace' href='profile.php?id=$DNI'> Ver Paciente </a></td>";
+
+                }
+
+
+                echo"<tr>";
+
+                echo'</table></p>';
+
+            }
+        }else if(!isset($_GET['inputValue']) ){
+            echo"No se han encontrado resultados";
+
+        }
     }
 }

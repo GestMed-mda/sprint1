@@ -198,6 +198,58 @@ p.card-text {
     background: whitesmoke;
     border: 1px green solid; }
 
+.enlace{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.tabla {
+   font-family: "Arial Black", sans-serif;
+   border-collapse: collapse;
+    display: table;
+    margin: auto;
+}
+
+.tabla td, .tabla th {
+    border: 2px solid green;
+    padding: 10px;
+    padding-left: 50px;
+}
+
+.busqueda input[type=text] {
+    width: 100px;
+    padding: 6px 15px 6px 15px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+}
+
+.busqueda input[type=text]:focus {
+    width: 200px;
+}
+
+
+.tabla tr:hover, .enlace:hover {
+    background-color: forestgreen;
+    color: white;
+    text-decoration: none;
+}
+
+.tabla th {
+    text-align:center;
+    background-color: inherit;
+    border: 2px green solid;
+}
+
+
 .textInput {
     height: 28px;
     margin: 2px;

@@ -15,11 +15,11 @@ if (isset($_POST['submit'])) {
 } else {
     View::start('GestMed: Inicio de Sesión');
 
-    echo '<form action="" method="post">
+    echo '<div class=""><form action="" method="post">
             <input name="DNI" type="text" placeholder="DNI"/>
             <input name="Password" type="password" placeholder="Contraseña"/>
             <input type="submit" name="submit" value="Acceder">
-          </form>
+          </form></div>
     ';
 
     View::end();
