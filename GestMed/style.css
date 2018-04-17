@@ -1,0 +1,321 @@
+.logo{
+    width: 155px;
+    height: 55px;
+}
+
+.navbar-color {
+    background-color: #1e2d02;
+    border-color: #1e2d02;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: #1e2d02;
+    border-color: #1e2d02;
+}
+
+.letter-space {
+    letter-spacing: 1.5px;
+}
+
+.title-home{
+    text-align: center;
+}
+
+.li-profile{
+    margin-left: 35px;
+}
+.image-carousel {
+    width: 100%;
+    height: 520px;
+    margin: auto;
+}
+.image-height{
+    min-height: 520px;
+}
+.text-carousel{
+    background-color: rgba(67, 153, 7, 0.55);
+    color:#FEFBEF;
+}
+.fa-cloud, .fa-mouse-pointer, .fa-rss{
+    font-size:60px;
+    color:lightgreen;
+    text-shadow:2px 2px 4px #000000;
+}
+i.fa.fa-cloud {
+    color: lightgreen;
+}
+.btn-primary{
+    background-color:lightgreen;
+    color:black;
+}
+.card{
+    width:400px;
+    height: 230px;
+
+}
+.counter-title > span {
+    font-size: 57px;
+    clear: both;
+    line-height: 65px;
+    color: #444;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+
+.texto-width-card{
+    max-width: 395px;
+}
+
+
+.milky {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    text-transform: uppercase;
+    display: block;
+    font-size: 25px;
+    color: #104603;
+    text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #fff;
+    font-weight: bold;
+    letter-spacing: 6px;
+    position: absolute;
+    padding: 10px 10px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #e5f7da 0%,#dcdcdc 100%);
+
+}
+.page-footer{
+    background-color: #1e2d02;
+    padding:10px;
+}
+.footer-copyright, .flex-center {
+    color:white;
+}
+
+.logo-footer{
+    width: 155px;
+    height: 55px;
+    position: absolute;
+    left: 565px;
+    top: 980px;
+}
+p.card-text {
+    max-width: 350px;
+}
+
+.imag-profile{
+    width: 250px;
+    height: 250px;
+    list-style: none;
+
+}
+
+.tambut{
+    width: 250px;
+}
+
+.borderimag{
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+    width:100%
+}
+
+#page {
+    width: 830px;
+    border-radius: 7px;
+    min-height: 400px;
+
+}
+
+.ulprofile {
+    list-style-type: none;
+    margin-top: 15px;
+    width: 830px;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+
+
+.lia {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+
+
+}
+
+.colorboton{
+    color: white;
+}
+
+.margin{
+
+    text-align: center;
+}
+
+.margul{
+    margin: 10px 0px 10px 100px ;
+}
+
+.limite {
+
+    display: inline-flex;
+
+}
+
+.inline {
+    display: list-item;
+    list-style: none;
+    border-style: outset;
+    margin: 10px 0 0 10px;
+}
+
+.liajax{
+    float: left;
+}
+
+.card {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.9);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    border-radius: 10px;
+    height: 550px;
+}
+
+#wrapper {
+    width: 40%;
+    height: 40%;
+    margin: 2% 30% 10% 30%;
+    padding: 50px;
+    background: whitesmoke;
+    border: 1px green solid; }
+
+.enlace{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.tabla {
+   font-family: "Arial Black", sans-serif;
+   border-collapse: collapse;
+    display: table;
+    margin: auto;
+}
+
+.tabla td, .tabla th {
+    border: 2px solid green;
+    padding: 10px;
+    padding-left: 50px;
+}
+
+.busqueda input[type=text] {
+    width: 100px;
+    padding: 6px 15px 6px 15px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+}
+
+.busqueda input[type=text]:focus {
+    width: 200px;
+}
+
+
+.tabla tr:hover, .enlace:hover {
+    background-color: forestgreen;
+    color: white;
+    text-decoration: none;
+}
+
+.tabla th {
+    text-align:center;
+    background-color: inherit;
+    border: 2px green solid;
+}
+
+
+.textInput {
+    height: 28px;
+    margin: 2px;
+    border: 1px solid black;
+    font-size: 1.2em;
+    padding: 5px;
+    width: 95%; }
+
+.btno {
+    width: 98.6%;
+    border: none;
+    margin-top: 5px;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    padding: 12px; }
+
+
+.cardind {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.9);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    border-radius: 10px;
+}
+
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+
+button:hover{
+    background: grey;
+    color: black;
+    transition: 0.5s;
+}
+
+/* SweetAlert2 */
+.swal2-popup {
+    font-size: 16px;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #DB524B;
+    color: #DB524B;
+}
